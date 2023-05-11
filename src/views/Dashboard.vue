@@ -1,6 +1,39 @@
 <script setup lang="ts">
 import PageTitle from '@/components/PageTitle/PageTitle.vue'
 import QuotationCard from '@/components/QuotationCard/QuotationCard.vue'
+
+const quotations = [
+  {
+    id: 1,
+    variation: -0.043,
+    price: 4.49,
+    name: 'USD DÓLAR / BRL REAL'
+  },
+  {
+    id: 2,
+    variation: 0.043,
+    price: 5.49,
+    name: 'USD DÓLAR / BRL REAL'
+  },
+  {
+    id: 3,
+    variation: -0.043,
+    price: 4.49,
+    name: 'USD DÓLAR / BRL REAL'
+  },
+  {
+    id: 4,
+    variation: -0.043,
+    price: 4.49,
+    name: 'USD DÓLAR / BRL REAL'
+  },
+  {
+    id: 5,
+    variation: -0.043,
+    price: 4.49,
+    name: 'USD DÓLAR / BRL REAL'
+  }
+]
 </script>
 
 <template>
@@ -9,13 +42,13 @@ import QuotationCard from '@/components/QuotationCard/QuotationCard.vue'
       <PageTitle>Dashboard</PageTitle>
       <h2 class="dashboard__quotations-title">Cotações</h2>
       <div class="dashboard__quotations">
-        <QuotationCard />
-        <QuotationCard />
-        <QuotationCard />
-        <QuotationCard />
-        <QuotationCard />
-        <QuotationCard />
-        <QuotationCard />
+        <template v-for="quotation in quotations" :key="quotation.id">
+          <QuotationCard
+            :variation="quotation.variation"
+            :price="quotation.price"
+            :name="quotation.name"
+          />
+        </template>
       </div>
     </main>
   </div>
