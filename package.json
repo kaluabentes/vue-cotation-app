@@ -18,9 +18,11 @@
   },
   "dependencies": {
     "@fontsource/poppins": "^4.5.10",
+    "chart.js": "^4.3.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^8.3.2",
     "vue": "^3.2.47",
+    "vue-chartjs": "^5.2.0",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
