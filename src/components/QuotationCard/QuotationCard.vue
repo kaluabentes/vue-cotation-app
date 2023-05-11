@@ -1,5 +1,18 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { Line } from 'vue-chartjs'
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js'
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 interface QuotationCardProps {
   variation: number
@@ -8,6 +21,23 @@ interface QuotationCardProps {
 }
 
 const props = defineProps<QuotationCardProps>()
+
+const chartData = computed(() => ({
+  labels: ['Início', 'Fim'],
+  datasets: [
+    {
+      label: 'Evolução',
+      data: [0, props.variation],
+      fill: false,
+      borderColor: props.variation > 0 ? '#004eff' : 'red',
+      tension: 0.1
+    }
+  ]
+}))
+
+const chartOptions = {
+  responsive: true
+}
 
 const badgeVariantClass = computed(() => ({
   'quotation-card__badge': true,
@@ -21,6 +51,9 @@ const badgeVariantClass = computed(() => ({
     <div :class="badgeVariantClass">{{ variation }}</div>
     <p class="quotation-card__price">R$ {{ price.toLocaleString('pt-BR') }}</p>
     <p class="quotation-card__name">{{ name }}</p>
+    <div class="quotation-card__chart">
+      <Line :options="chartOptions" :data="chartData" />
+    </div>
   </div>
 </template>
 
@@ -33,6 +66,7 @@ const badgeVariantClass = computed(() => ({
   display: flex;
   flex-direction: column;
   align-items: start;
+  gap: 10px;
 }
 
 .quotation-card__badge {
@@ -40,7 +74,6 @@ const badgeVariantClass = computed(() => ({
   padding: 4px 6px;
   border-radius: 4px;
   font-size: 12px;
-  margin-bottom: 10px;
 }
 
 .quotation-card__badge--success {
@@ -55,7 +88,6 @@ const badgeVariantClass = computed(() => ({
 
 .quotation-card__price {
   margin: 0;
-  margin-bottom: 10px;
   font-size: 28px;
   font-weight: 600;
   color: #444;
@@ -66,5 +98,14 @@ const badgeVariantClass = computed(() => ({
   font-size: 12px;
   font-weight: 500;
   color: #777;
+}
+
+.quotation-card__chart {
+  width: 100%;
+  position: relative;
+
+  & canvas {
+    width: 100% !important;
+  }
 }
 </style>

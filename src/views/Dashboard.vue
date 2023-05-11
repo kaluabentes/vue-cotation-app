@@ -66,6 +66,7 @@ const quotations = [
   height: 100vh;
   width: 100%;
   background: #9ee;
+  overflow: auto;
 }
 
 .dashboard__box {
@@ -76,7 +77,11 @@ const quotations = [
 
 .dashboard__quotations {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 16px;
+
+  @media (min-width: 769px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>
