@@ -11,7 +11,7 @@ const router = useRouter()
 
 <template>
   <div class="signin__container">
-    <div class="signin__box">
+    <main class="signin__box">
       <PageTitle>Crie um conta</PageTitle>
       <div class="signin__controls">
         <TextField placeholder="Digite seu nome" label="Nome" />
@@ -24,7 +24,7 @@ const router = useRouter()
           <LinkButton @onClick="() => router.push({ name: 'signIn' })">Entre agora</LinkButton>
         </p>
       </div>
-    </div>
+    </main>
   </div>
 </template>
 
