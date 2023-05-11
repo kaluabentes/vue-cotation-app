@@ -5,7 +5,6 @@ import AuthLayout from '@/layouts/AuthLayout/AuthLayout.vue'
 import Button from '@/components/Button/Button.vue'
 import PageTitle from '@/components/PageTitle/PageTitle.vue'
 import TextField from '@/components/TextField/TextField.vue'
-import LinkButton from '@/components/LinkButton/LinkButton.vue'
 
 const router = useRouter()
 </script>

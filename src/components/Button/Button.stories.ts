@@ -23,3 +23,10 @@ export const Link: Story = {
     variant: 'link'
   }
 }
+
+export const Small: Story = {
+  args: {
+    default: 'Confirmar',
+    size: 'small'
+  }
+}

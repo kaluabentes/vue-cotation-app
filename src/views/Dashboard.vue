@@ -39,11 +39,13 @@ const quotations = [
 
 <template>
   <div class="dashboard__container">
-    <main class="dashboard__box">
-      <PageTitle>Dashboard</PageTitle>
-      <Button>Sair</Button>
+    <article class="dashboard__box">
+      <header class="dashboard__header">
+        <PageTitle>Dashboard</PageTitle>
+        <Button>Sair</Button>
+      </header>
       <h2 class="dashboard__quotations-title">Cotações</h2>
-      <div class="dashboard__quotations">
+      <main class="dashboard__quotations">
         <template v-for="quotation in quotations" :key="quotation.id">
           <QuotationCard
             :variation="quotation.variation"
@@ -51,12 +53,17 @@ const quotations = [
             :name="quotation.name"
           />
         </template>
-      </div>
-    </main>
+      </main>
+    </article>
   </div>
 </template>
 
 <style scoped>
+.dashboard__header {
+  display: flex;
+  gap: 32px;
+}
+
 .dashboard__quotations-title {
   font-size: 12px;
   letter-spacing: 2px;

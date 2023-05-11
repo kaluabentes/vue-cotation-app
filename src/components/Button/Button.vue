@@ -3,6 +3,7 @@ import { computed } from 'vue'
 
 interface ButtonProps {
   variant: 'default' | 'link'
+  size: 'default' | 'small'
 }
 
 const emit = defineEmits(['onClick'])
@@ -10,7 +11,8 @@ const props = defineProps<ButtonProps>()
 
 const classNames = computed(() => ({
   button: true,
-  'button--link': props.variant === 'link'
+  'button--link': props.variant === 'link',
+  'button--small': props.size === 'small'
 }))
 </script>
 
@@ -52,5 +54,10 @@ const classNames = computed(() => ({
     text-decoration: underline;
     background: transparent;
   }
+}
+
+.button--small {
+  height: 2rem;
+  padding: 0 0.75rem;
 }
 </style>
