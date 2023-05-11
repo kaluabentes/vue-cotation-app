@@ -36,7 +36,7 @@ defineProps<TextFieldProps>()
 .text-field__input {
   outline: none;
   height: 2.5rem;
-  padding: 0 16px;
+  padding: 0 1rem;
   border: 1px solid rgb(226, 232, 240);
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 0;
