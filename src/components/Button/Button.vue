@@ -40,6 +40,12 @@ const classNames = computed(() => ({
   }
 }
 
+.button--small {
+  height: 2rem;
+  font-size: 14px;
+  padding: 0 0.75rem;
+}
+
 .button--link {
   padding: 0;
   background: transparent;
@@ -49,15 +55,13 @@ const classNames = computed(() => ({
   font-weight: 600;
   cursor: pointer;
   box-shadow: none;
+  display: inline-block;
+  padding: 0;
+  width: initial;
 
   &:hover {
     text-decoration: underline;
     background: transparent;
   }
-}
-
-.button--small {
-  height: 2rem;
-  padding: 0 0.75rem;
 }
 </style>

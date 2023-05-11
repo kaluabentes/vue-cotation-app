@@ -42,7 +42,7 @@ const quotations = [
     <article class="dashboard__box">
       <header class="dashboard__header">
         <PageTitle>Dashboard</PageTitle>
-        <Button>Sair</Button>
+        <Button variant="link" size="small">Sair</Button>
       </header>
       <h2 class="dashboard__quotations-title">Cotações</h2>
       <main class="dashboard__quotations">
@@ -61,7 +61,18 @@ const quotations = [
 <style scoped>
 .dashboard__header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 32px;
+  margin-bottom: 32px;
+
+  & h1 {
+    margin: 0;
+  }
+
+  & button {
+    max-width: 142px;
+  }
 }
 
 .dashboard__quotations-title {
