@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Button from '@/components/Button/Button.vue'
 import PageTitle from '@/components/PageTitle/PageTitle.vue'
 import QuotationCard from '@/components/QuotationCard/QuotationCard.vue'
 
@@ -40,6 +41,7 @@ const quotations = [
   <div class="dashboard__container">
     <main class="dashboard__box">
       <PageTitle>Dashboard</PageTitle>
+      <Button>Sair</Button>
       <h2 class="dashboard__quotations-title">Cotações</h2>
       <div class="dashboard__quotations">
         <template v-for="quotation in quotations" :key="quotation.id">

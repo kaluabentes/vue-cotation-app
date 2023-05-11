@@ -16,3 +16,10 @@ export const Default: Story = {
     default: 'Confirmar'
   }
 }
+
+export const Link: Story = {
+  args: {
+    default: 'Confirmar',
+    variant: 'link'
+  }
+}

@@ -1,9 +1,21 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
+interface ButtonProps {
+  variant: 'default' | 'link'
+}
+
 const emit = defineEmits(['onClick'])
+const props = defineProps<ButtonProps>()
+
+const classNames = computed(() => ({
+  button: true,
+  'button--link': props.variant === 'link'
+}))
 </script>
 
 <template>
-  <button class="button" @click="$emit('onClick')"><slot /></button>
+  <button :class="classNames" @click="$emit('onClick')"><slot /></button>
 </template>
 
 <style scoped>
@@ -23,6 +35,22 @@ const emit = defineEmits(['onClick'])
 
   &:hover {
     background: #0014ff;
+  }
+}
+
+.button--link {
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #004eff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none;
+
+  &:hover {
+    text-decoration: underline;
+    background: transparent;
   }
 }
 </style>
