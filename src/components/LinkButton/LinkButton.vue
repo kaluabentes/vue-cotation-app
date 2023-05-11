@@ -8,21 +8,16 @@ const emit = defineEmits(['onClick'])
 
 <style scoped>
 .button {
-  padding: 0 1rem;
-  height: 2.5rem;
-  font-weight: 600;
-  width: 100%;
-  border-radius: 6px;
-  background: #004eff;
-  color: #fff;
-  cursor: pointer;
-  outline: none;
+  padding: 0;
+  background: transparent;
   border: none;
-  transition: 200ms;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 0;
+  outline: none;
+  color: #004eff;
+  font-weight: 600;
+  cursor: pointer;
 
   &:hover {
-    background: #0014ff;
+    text-decoration: underline;
   }
 }
 </style>
