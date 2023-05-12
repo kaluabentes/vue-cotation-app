@@ -45,7 +45,10 @@ const quotations = [
     <article class="dashboard__box">
       <header class="dashboard__header">
         <PageTitle>Dashboard</PageTitle>
-        <Button variant="link" size="small">Sair</Button>
+        <div class="dashboard__header-user-details">
+          <p>Olá, {{ user.name }}</p>
+          <Button variant="link" size="small">Sair</Button>
+        </div>
       </header>
       <h2 class="dashboard__quotations-title">Cotações</h2>
       <main class="dashboard__quotations">
@@ -105,6 +108,21 @@ const quotations = [
 
   @media (min-width: 769px) {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.dashboard__header-user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  gap: 2px;
+
+  & p {
+    margin: 0;
+    font-weight: 500;
+    color: #444;
+    font-size: 14px;
   }
 }
 </style>
