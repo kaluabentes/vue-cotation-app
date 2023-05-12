@@ -18,3 +18,9 @@ export const Default: Story = {
     name: 'USD DÓLAR / BRL REAL'
   }
 }
+
+export const Skeleton: Story = {
+  args: {
+    isLoading: true
+  }
+}

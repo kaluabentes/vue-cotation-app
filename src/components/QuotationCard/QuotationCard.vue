@@ -12,12 +12,15 @@ import {
   Legend
 } from 'chart.js'
 
+import Skeleton from '@/components/Skeleton/Skeleton.vue'
+
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 interface QuotationCardProps {
-  variation: number
-  price: number
-  name: string
+  isLoading?: boolean
+  variation?: number
+  price?: number
+  name?: string
 }
 
 const props = defineProps<QuotationCardProps>()
@@ -66,15 +69,22 @@ const handleChartToggle = () => {
   <div class="quotation-card">
     <div class="quotation-card__header">
       <div class="quotation-card__content">
-        <div :class="badgeClassNames">{{ variation }}</div>
-        <p class="quotation-card__price">R$ {{ price.toLocaleString('pt-BR') }}</p>
-        <p class="quotation-card__name">{{ name }}</p>
+        <template v-if="isLoading">
+          <Skeleton size="small" />
+          <Skeleton size="large" />
+          <Skeleton size="medium" />
+        </template>
+        <template v-else>
+          <div :class="badgeClassNames" v-if="variation">{{ variation }}</div>
+          <p class="quotation-card__price" v-if="price">R$ {{ price.toLocaleString('pt-BR') }}</p>
+          <p class="quotation-card__name" v-if="name">{{ name }}</p>
+        </template>
       </div>
-      <button :class="chartButtonClassNames" @click="handleChartToggle">
+      <button v-if="!isLoading" :class="chartButtonClassNames" @click="handleChartToggle">
         <v-icon name="fa-chart-line" />
       </button>
     </div>
-    <div :class="chartClassNames">
+    <div v-if="!isLoading" :class="chartClassNames">
       <Line :options="chartOptions" :data="chartData" />
     </div>
   </div>

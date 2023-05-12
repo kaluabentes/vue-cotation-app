@@ -4,11 +4,13 @@ import PageTitle from '@/components/PageTitle/PageTitle.vue'
 import QuotationCard from '@/components/QuotationCard/QuotationCard.vue'
 import useAuth from '@/modules/auth/composables/auth'
 import useSignOut from '@/modules/auth/composables/signOut'
+import useQuotations from '@/modules/quotations/composables/quotations'
 
 const { user } = useAuth()
 const { signOut } = useSignOut()
+const { quotations } = useQuotations()
 
-const quotations = [
+const quotationsMock = [
   {
     id: 1,
     variation: -0.043,
@@ -54,7 +56,7 @@ const quotations = [
       </header>
       <h2 class="dashboard__quotations-title">Cotações</h2>
       <main class="dashboard__quotations">
-        <template v-for="quotation in quotations" :key="quotation.id">
+        <template v-for="quotation in quotationsMock" :key="quotation.id">
           <QuotationCard
             :variation="quotation.variation"
             :price="quotation.price"
