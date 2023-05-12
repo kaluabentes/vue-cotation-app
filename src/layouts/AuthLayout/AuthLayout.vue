@@ -2,10 +2,11 @@
 import PageTitle from '@/components/PageTitle/PageTitle.vue'
 
 interface AuthLayoutProps {
-  title: string
+  title?: string
 }
 
 const props = defineProps<AuthLayoutProps>()
+const emit = defineEmits([])
 </script>
 
 <template>
