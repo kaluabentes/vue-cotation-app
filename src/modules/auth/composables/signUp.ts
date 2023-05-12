@@ -1,13 +1,8 @@
 import { USERS_STORAGE_KEY } from '../constants'
-
-interface UserData {
-  name: string
-  email: string
-  password: string
-}
+import User from '../models/User'
 
 const useSignUp = () => {
-  const signUp = (userData: UserData) => {
+  const signUp = (userData: User) => {
     const localUsers = localStorage.getItem(USERS_STORAGE_KEY)
 
     if (localUsers) {
@@ -27,7 +22,7 @@ const useSignUp = () => {
       return false
     }
 
-    const users = JSON.parse(localUsers) as UserData[]
+    const users = JSON.parse(localUsers) as User[]
     const existingUser = users.find((user) => user.email === email)
 
     return Boolean(existingUser)
