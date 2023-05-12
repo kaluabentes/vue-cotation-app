@@ -1,8 +1,8 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
-import User from '../models/User'
-import { USER_STORAGE_KEY } from '../constants'
+import User from '../../models/User'
+import { USER_STORAGE_KEY } from '../../constants'
 
 const useAuth = () => {
   const isLoading = ref(true)
@@ -13,10 +13,11 @@ const useAuth = () => {
     const localUser = sessionStorage.getItem(USER_STORAGE_KEY)
 
     if (!localUser) {
-      router.push({ name: 'signIn' })
+      router?.push({ name: 'signIn' })
     }
 
     user.value = JSON.parse(localUser!)
+    isLoading.value = false
   }
 
   onMounted(() => {
