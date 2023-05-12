@@ -1,8 +1,10 @@
 interface Quotation {
   id: string
+  name: string
   variation: number
   price: number
-  name: string
+  priceLocale: string
+  currency: string
 }
 
 export default Quotation

@@ -9,7 +9,7 @@ const fakeFetchQuotations = () =>
   new Promise((resolve) => {
     setTimeout(() => {
       resolve(data)
-    }, 3000)
+    }, 1000)
   })
 
 const useQuotations = () => {

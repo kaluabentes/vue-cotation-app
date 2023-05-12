@@ -15,7 +15,9 @@ export const Default: Story = {
   args: {
     variation: -0.042,
     price: 4.94,
-    name: 'USD DÓLAR / BRL REAL'
+    name: 'USD DÓLAR / BRL REAL',
+    priceLocale: 'pt-BR',
+    currency: 'BRL'
   }
 }
 

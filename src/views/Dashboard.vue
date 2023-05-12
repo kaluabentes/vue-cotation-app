@@ -36,6 +36,8 @@ const { quotations, isLoading } = useQuotations()
             :variation="quotation.variation"
             :price="quotation.price"
             :name="quotation.name"
+            :priceLocale="quotation.priceLocale"
+            :currency="quotation.currency"
           />
         </template>
       </main>

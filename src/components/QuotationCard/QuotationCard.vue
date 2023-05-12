@@ -13,14 +13,17 @@ import {
 } from 'chart.js'
 
 import Skeleton from '@/components/Skeleton/Skeleton.vue'
+import formatCurrency from '@/lib/utils/number/formatCurrency'
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
 interface QuotationCardProps {
+  priceLocale?: string
   isLoading?: boolean
   variation?: number
   price?: number
   name?: string
+  currency?: string
 }
 
 const props = defineProps<QuotationCardProps>()
@@ -77,7 +80,9 @@ const handleChartToggle = () => {
         </template>
         <template v-else>
           <div :class="badgeClassNames">{{ variation }}</div>
-          <p class="quotation-card__price" v-if="price">R$ {{ price.toLocaleString('pt-BR') }}</p>
+          <p class="quotation-card__price" v-if="price">
+            {{ formatCurrency(price, priceLocale, currency) }}
+          </p>
           <p class="quotation-card__name" v-if="name">{{ name }}</p>
         </template>
       </div>
@@ -85,7 +90,7 @@ const handleChartToggle = () => {
         <v-icon name="fa-chart-line" />
       </button>
     </div>
-    <div v-if="!isLoading" :class="chartClassNames">
+    <div v-if="!isLoading && isChartOpen" :class="chartClassNames">
       <Line :options="chartOptions" :data="chartData" />
     </div>
   </div>
