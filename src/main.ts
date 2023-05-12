@@ -7,7 +7,7 @@ import '@fontsource/poppins/700.css'
 
 import App from '@/App.vue'
 import router from '@/router'
-import '@/assets/global.css'
+import '@/styles/global.css'
 import '@/lib/infra/icons'
 
 const app = createApp(App)
