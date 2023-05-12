@@ -84,6 +84,7 @@ const { quotations, isLoading } = useQuotations()
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 16px;
+  align-items: start;
 
   @media (min-width: 769px) {
     grid-template-columns: repeat(2, 1fr);
