@@ -10,6 +10,8 @@ interface Credentials {
   password: string
 }
 
+let expireTimeout: NodeJS.Timeout
+
 const useSignIn = () => {
   const router = useRouter()
   const { signOut } = useSignOut()
@@ -33,7 +35,8 @@ const useSignIn = () => {
     }
 
     sessionStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user))
-    setTimeout(() => signOut(), SESSION_EXPIRE_TIME)
+    clearTimeout(expireTimeout)
+    expireTimeout = setTimeout(() => signOut(), SESSION_EXPIRE_TIME)
     router.push({ name: 'dashboard' })
   }
 
