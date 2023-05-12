@@ -4,7 +4,7 @@ interface TextFieldProps {
   label: string
   error?: string
   placeholder: string
-  modelValue: string
+  modelValue?: string
 }
 
 const props = defineProps<TextFieldProps>()

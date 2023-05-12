@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { VueNode } from '@vue/test-utils/dist/types'
 
 import TextField from './TextField.vue'
+import { VueNode } from 'node_modules/@vue/test-utils/dist/types'
 
 describe('TextField', () => {
   it('renders properly', () => {
@@ -20,7 +20,9 @@ describe('TextField', () => {
   })
 
   it('changes correctly', async () => {
-    const wrapper = mount(TextField)
+    const wrapper = mount(TextField, {
+      props: { label: 'Email', error: 'Error', type: 'text', placeholder: 'Digite seu email' }
+    })
     const input = wrapper.find('.text-field__input')
     const inputElement = input.element as VueNode<HTMLInputElement>
 

@@ -1,4 +1,4 @@
-const formatCurrency = (price: number, locale, currency) =>
+const formatCurrency = (price: number, locale: string, currency: string) =>
   price.toLocaleString(locale, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,

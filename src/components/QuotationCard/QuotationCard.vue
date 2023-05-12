@@ -47,6 +47,10 @@ const chartOptions = {
   responsive: true
 }
 
+const formattedCurrency = computed(() =>
+  formatCurrency(props.price!, props.priceLocale!, props.currency!)
+)
+
 const badgeClassNames = computed(() => ({
   'quotation-card__badge': true,
   'quotation-card__badge--danger': props.variation && props.variation < 0,
@@ -81,7 +85,7 @@ const handleChartToggle = () => {
         <template v-else>
           <div :class="badgeClassNames">{{ variation }}</div>
           <p class="quotation-card__price" v-if="price">
-            {{ formatCurrency(price, priceLocale, currency) }}
+            {{ formattedCurrency }}
           </p>
           <p class="quotation-card__name" v-if="name">{{ name }}</p>
         </template>
