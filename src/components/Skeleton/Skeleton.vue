@@ -30,15 +30,15 @@ const classNames = computed(() => ({
 }
 
 .skeleton--small {
-  width: 100px;
+  max-width: 100px;
 }
 
 .skeleton--medium {
-  width: 300px;
+  max-width: 300px;
 }
 
 .skeleton--large {
-  width: 500px;
+  max-width: 500px;
 }
 
 @keyframes shine {
