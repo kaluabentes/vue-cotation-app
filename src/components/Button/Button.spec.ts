@@ -1,6 +1,5 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
-import sinon from 'sinon'
 
 import Button from './Button.vue'
 
@@ -21,11 +20,11 @@ describe('Button', () => {
   })
 
   it('execute onClick event', async () => {
-    const onClick = sinon.stub()
+    const onClick = vi.fn()
     const wrapper = mount(Button, { props: { onClick } })
 
     await wrapper.trigger('click')
 
-    expect(onClick.called).toBe(true)
+    expect(onClick).toHaveBeenCalled()
   })
 })
