@@ -19,7 +19,7 @@ const errors = ref({
   password: ''
 })
 
-const setError = (field, error) => {
+const setError = (field: string, error: string) => {
   errors.value = {
     ...errors.value,
     [field]: error

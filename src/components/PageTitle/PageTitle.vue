@@ -7,5 +7,6 @@
 <style scoped>
 .page-title {
   margin: 0 0 32px 0;
+  color: #222;
 }
 </style>

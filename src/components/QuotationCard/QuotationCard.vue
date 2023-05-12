@@ -32,9 +32,9 @@ const chartData = computed(() => ({
   datasets: [
     {
       label: 'Evolução',
-      data: [0, props.variation],
+      data: [0, Number(props.variation)],
       fill: false,
-      borderColor: props.variation > 0 ? '#004eff' : 'red',
+      borderColor: props.variation && props.variation > 0 ? '#004eff' : 'red',
       tension: 0.1
     }
   ]
@@ -46,8 +46,8 @@ const chartOptions = {
 
 const badgeClassNames = computed(() => ({
   'quotation-card__badge': true,
-  'quotation-card__badge--danger': props.variation < 0,
-  'quotation-card__badge--success': props.variation > 0
+  'quotation-card__badge--danger': props.variation && props.variation < 0,
+  'quotation-card__badge--success': props.variation && props.variation > 0
 }))
 
 const chartClassNames = computed(() => ({

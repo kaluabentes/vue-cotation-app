@@ -7,7 +7,12 @@ interface TextFieldProps {
   modelValue: string
 }
 
-defineProps<TextFieldProps>()
+const props = defineProps<TextFieldProps>()
+const emit = defineEmits(['update:modelValue'])
+
+const handleChange = (event: Event) => {
+  emit('update:modelValue', (event.target as HTMLInputElement).value)
+}
 </script>
 
 <template>
@@ -18,7 +23,7 @@ defineProps<TextFieldProps>()
       :type="type"
       :placeholder="placeholder"
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
+      @input="handleChange"
     />
     <p class="text-field__error">{{ error }}</p>
   </div>

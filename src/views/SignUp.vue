@@ -26,7 +26,7 @@ const errors = ref({
 })
 const isSignUpDone = ref(false)
 
-const setError = (field, error) => {
+const setError = (field: string, error: string) => {
   errors.value = {
     ...errors.value,
     [field]: error
