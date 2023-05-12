@@ -3,14 +3,7 @@ import adaptQuotations from '../adapters/adaptQuotations/adaptQuotations'
 import data from '../data'
 import Quotation from '../models/Quotation'
 
-// const API_ENDPOINT = 'https://api.hgbrasil.com/finance?key=ea971b34'
-
-const fakeFetchQuotations = () =>
-  new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(data)
-    }, 1000)
-  })
+const API_ENDPOINT = 'https://api.hgbrasil.com/finance?key=ea971b34&format=json-cors'
 
 const useQuotations = () => {
   const controller = new AbortController()
@@ -21,11 +14,8 @@ const useQuotations = () => {
   const fetchQuotations = async () => {
     try {
       isLoading.value = true
-      // A API segurida está tendo problema de CORS
-      // por isso optei por mockar a resposta num fake fetch
-      // const response = await fetch(API_ENDPOINT, { signal: controller.signal })
-      // const quotations = await response.json()
-      const quotationsResponse = await fakeFetchQuotations()
+      const response = await fetch(API_ENDPOINT, { signal: controller.signal })
+      const quotationsResponse = await response.json()
       quotations.value = adaptQuotations(quotationsResponse)
     } catch (error: any) {
       console.log('useQuotations error: ', error)
