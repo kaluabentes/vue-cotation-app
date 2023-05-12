@@ -51,7 +51,7 @@ const { quotations, isLoading } = useQuotations()
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  margin-bottom: 32px;
+  padding: 20px 0;
 
   & h1 {
     margin: 0;
@@ -103,7 +103,7 @@ const { quotations, isLoading } = useQuotations()
   & p {
     margin: 0;
     font-weight: 500;
-    color: #444;
+    color: #222;
     font-size: 14px;
   }
 }
