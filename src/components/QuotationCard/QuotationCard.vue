@@ -96,6 +96,11 @@ const handleChartToggle = () => {
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 0;
   padding: 16px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 }
 
 .quotation-card__header {
