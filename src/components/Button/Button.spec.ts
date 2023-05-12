@@ -5,22 +5,22 @@ import sinon from 'sinon'
 import Button from './Button.vue'
 
 describe('Button', () => {
-  it('renders properly', () => {
+  it('renders properly default slot', () => {
     const wrapper = mount(Button, { props: { default: 'Confirmar' } })
     expect(wrapper.html()).toContain('Confirmar')
   })
 
-  it('sets small size', () => {
+  it('renders properly small size', () => {
     const wrapper = mount(Button, { props: { size: 'small' } })
     expect(wrapper.classes('button--small')).toBe(true)
   })
 
-  it('sets link variant', () => {
+  it('renders properly link variant', () => {
     const wrapper = mount(Button, { props: { variant: 'link' } })
     expect(wrapper.classes('button--link')).toBe(true)
   })
 
-  it('clicks', async () => {
+  it('execute onClick event', async () => {
     const onClick = sinon.stub()
     const wrapper = mount(Button, { props: { onClick } })
 
