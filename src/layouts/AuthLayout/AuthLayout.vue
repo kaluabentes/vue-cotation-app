@@ -40,7 +40,6 @@ const props = defineProps<AuthLayoutProps>()
   height: 100%;
   left: 0;
   top: 0;
-  padding-top: 60px;
 
   @media (min-width: 769px) {
     padding: 32px;

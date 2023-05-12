@@ -23,7 +23,7 @@ const { quotations, isLoading } = useQuotations()
       </header>
       <h2 class="dashboard__quotations-title">Cotações</h2>
       <main class="dashboard__quotations">
-        <template v-if="!isLoading">
+        <template v-if="isLoading">
           <QuotationCard isLoading />
           <QuotationCard isLoading />
           <QuotationCard isLoading />
