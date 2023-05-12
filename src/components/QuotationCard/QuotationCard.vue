@@ -47,7 +47,8 @@ const chartOptions = {
 const badgeClassNames = computed(() => ({
   'quotation-card__badge': true,
   'quotation-card__badge--danger': props.variation && props.variation < 0,
-  'quotation-card__badge--success': props.variation && props.variation > 0
+  'quotation-card__badge--success': props.variation && props.variation > 0,
+  'quotation-card__badge--info': props.variation === 0
 }))
 
 const chartClassNames = computed(() => ({
@@ -75,7 +76,7 @@ const handleChartToggle = () => {
           <Skeleton size="medium" />
         </template>
         <template v-else>
-          <div :class="badgeClassNames" v-if="variation">{{ variation }}</div>
+          <div :class="badgeClassNames">{{ variation }}</div>
           <p class="quotation-card__price" v-if="price">R$ {{ price.toLocaleString('pt-BR') }}</p>
           <p class="quotation-card__name" v-if="name">{{ name }}</p>
         </template>
@@ -134,6 +135,11 @@ const handleChartToggle = () => {
 .quotation-card__badge--danger {
   background: red;
   color: #fff;
+}
+
+.quotation-card__badge--info {
+  color: #fff;
+  background: #004eff;
 }
 
 .quotation-card__price {

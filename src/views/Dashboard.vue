@@ -8,40 +8,7 @@ import useQuotations from '@/modules/quotations/composables/quotations'
 
 const { user } = useAuth()
 const { signOut } = useSignOut()
-const { quotations } = useQuotations()
-
-const quotationsMock = [
-  {
-    id: 1,
-    variation: -0.043,
-    price: 4.49,
-    name: 'USD DÓLAR / BRL REAL'
-  },
-  {
-    id: 2,
-    variation: 0.043,
-    price: 5.49,
-    name: 'USD DÓLAR / BRL REAL'
-  },
-  {
-    id: 3,
-    variation: -0.043,
-    price: 4.49,
-    name: 'USD DÓLAR / BRL REAL'
-  },
-  {
-    id: 4,
-    variation: -0.043,
-    price: 4.49,
-    name: 'USD DÓLAR / BRL REAL'
-  },
-  {
-    id: 5,
-    variation: -0.043,
-    price: 4.49,
-    name: 'USD DÓLAR / BRL REAL'
-  }
-]
+const { quotations, isLoading } = useQuotations()
 </script>
 
 <template>
@@ -56,7 +23,15 @@ const quotationsMock = [
       </header>
       <h2 class="dashboard__quotations-title">Cotações</h2>
       <main class="dashboard__quotations">
-        <template v-for="quotation in quotationsMock" :key="quotation.id">
+        <template v-if="isLoading">
+          <QuotationCard isLoading />
+          <QuotationCard isLoading />
+          <QuotationCard isLoading />
+          <QuotationCard isLoading />
+          <QuotationCard isLoading />
+          <QuotationCard isLoading />
+        </template>
+        <template v-else v-for="quotation in quotations" :key="quotation.id">
           <QuotationCard
             :variation="quotation.variation"
             :price="quotation.price"
