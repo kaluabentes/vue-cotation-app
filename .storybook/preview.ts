@@ -1,6 +1,5 @@
 import { Preview, setup } from '@storybook/vue3'
-import { OhVueIcon, addIcons } from 'oh-vue-icons'
-import { FaChartLine } from 'oh-vue-icons/icons'
+import { OhVueIcon } from 'oh-vue-icons'
 import '@fontsource/poppins/400.css'
 import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/600.css'
@@ -8,7 +7,7 @@ import '@fontsource/poppins/700.css'
 
 import '@/assets/global.css'
 
-addIcons(FaChartLine)
+import '@/lib/infra/icons'
 
 setup((app) => {
   app.component('v-icon', OhVueIcon)

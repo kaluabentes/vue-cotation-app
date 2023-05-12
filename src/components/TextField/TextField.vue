@@ -1,7 +1,8 @@
 <script setup lang="ts">
 interface TextFieldProps {
+  type?: string
   label: string
-  error: string
+  error?: string
   placeholder: string
   modelValue: string
 }
@@ -14,6 +15,7 @@ defineProps<TextFieldProps>()
     <label class="text-field__label">{{ label }}</label>
     <input
       class="text-field__input"
+      :type="type"
       :placeholder="placeholder"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
@@ -48,7 +50,8 @@ defineProps<TextFieldProps>()
 }
 
 .text-field__error {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 500;
   color: red;
   margin: 0;
 }

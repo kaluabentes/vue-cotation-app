@@ -2,8 +2,8 @@
 import { computed } from 'vue'
 
 interface ButtonProps {
-  variant: 'default' | 'link'
-  size: 'default' | 'small'
+  variant?: 'default' | 'link'
+  size?: 'default' | 'small'
 }
 
 const emit = defineEmits(['onClick'])
@@ -58,6 +58,7 @@ const classNames = computed(() => ({
   display: inline-block;
   padding: 0;
   width: initial;
+  height: initial;
 
   &:hover {
     text-decoration: underline;
