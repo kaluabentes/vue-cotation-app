@@ -1,5 +1,5 @@
 import { onMounted, onUnmounted, ref } from 'vue'
-import adaptQuotations from '../adapters/adaptQuotations'
+import adaptQuotations from '../adapters/adaptQuotations/adaptQuotations'
 import data from '../data'
 import Quotation from '../models/Quotation'
 
