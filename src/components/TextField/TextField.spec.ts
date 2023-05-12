@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { VueNode } from '@vue/test-utils/dist/types'
 
 import TextField from './TextField.vue'
-import { VueNode } from '@vue/test-utils/dist/types'
 
 describe('TextField', () => {
   it('renders properly', () => {
