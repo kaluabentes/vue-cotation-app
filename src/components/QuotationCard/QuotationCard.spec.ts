@@ -1,6 +1,5 @@
 import { describe, it, expect } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import sinon from 'sinon'
 
 import QuotationCard from './QuotationCard.vue'
 
