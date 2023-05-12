@@ -17,4 +17,5 @@ An app to fech and display finance data.
 - Run `yarn dev` to start development server
 - Run `yarn build` to build a release version
 - Run `yarn test:unit` to run unit tests
+- Run `yarn test:coverage` to run coverage tests
 - Run `yarn storybook` to start storybook server
