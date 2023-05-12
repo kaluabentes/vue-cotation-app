@@ -21,7 +21,7 @@ describe('QuotationCard', () => {
 
     expect(variation).toBe('0.045')
     expect(name).toBe('Dolar')
-    expect(price.replace(/\s/g, ' ')).toBe('R$ 50,50')
+    expect(price).toBe('R$ 50,50')
   })
 
   it('toggles chart', async () => {
