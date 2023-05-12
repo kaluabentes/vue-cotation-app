@@ -11,8 +11,6 @@ const adaptQuotations = (quotationsResponse: any) => {
     results: { currencies, bitcoin }
   } = quotationsResponse
 
-  console.log('quotationsResponse', quotationsResponse)
-
   const currenciesCollection = Object.keys(currencies)
     .filter((key) => key !== 'source')
     .map((key, index) => ({
@@ -32,8 +30,6 @@ const adaptQuotations = (quotationsResponse: any) => {
     priceLocale: formatLocale(bitcoin[key].format[1]),
     currency: bitcoin[key].format[0]
   }))
-
-  console.log('quotations', [...currenciesCollection, ...bitcoinCollection])
 
   return [...currenciesCollection, ...bitcoinCollection]
 }

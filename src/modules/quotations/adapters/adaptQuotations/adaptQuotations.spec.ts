@@ -26,8 +26,6 @@ describe('adaptQuotations', () => {
   it('should work properly', () => {
     const result = adaptQuotations(testData)
 
-    console.log('result', result)
-
     expect(result[0].name).toBe('USD Dollar / BRL REAL')
     expect(result[0].variation).toBe(0)
     expect(result[0].price).toBe(4.9309)
