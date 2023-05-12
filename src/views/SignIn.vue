@@ -69,7 +69,7 @@ const handleSignIn = () => {
       type="password"
     />
     <Button @click="handleSignIn">Login</Button>
-    <p class="signin__create-account-text">
+    <p class="account-text">
       Você ainda não possui uma conta?
       <Button variant="link" @onClick="() => router.push({ name: 'signUp' })">
         Crie uma agora
@@ -79,9 +79,10 @@ const handleSignIn = () => {
 </template>
 
 <style scoped>
-.signin__create-account-text {
+.account-text {
   text-align: center;
   font-size: 14px;
   margin: 0;
+  line-height: 1.2rem;
 }
 </style>

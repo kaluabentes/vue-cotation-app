@@ -146,6 +146,7 @@ watch(isSignUpDone, (newIsSignUpDone) => {
   text-align: center;
   font-size: 14px;
   margin: 0;
+  line-height: 1.2rem;
 }
 
 .check-icon {

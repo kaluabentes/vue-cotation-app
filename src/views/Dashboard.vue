@@ -3,8 +3,10 @@ import Button from '@/components/Button/Button.vue'
 import PageTitle from '@/components/PageTitle/PageTitle.vue'
 import QuotationCard from '@/components/QuotationCard/QuotationCard.vue'
 import useAuth from '@/modules/auth/composables/auth'
+import useSignOut from '@/modules/auth/composables/signOut'
 
-const { user, isLoading } = useAuth()
+const { user } = useAuth()
+const { signOut } = useSignOut()
 
 const quotations = [
   {
@@ -46,8 +48,8 @@ const quotations = [
       <header class="dashboard__header">
         <PageTitle>Dashboard</PageTitle>
         <div class="dashboard__header-user-details">
-          <p>Olá, {{ user.name }}</p>
-          <Button variant="link" size="small">Sair</Button>
+          <p>Olá, {{ user?.name }}</p>
+          <Button variant="link" size="small" @onClick="signOut">Sair</Button>
         </div>
       </header>
       <h2 class="dashboard__quotations-title">Cotações</h2>
