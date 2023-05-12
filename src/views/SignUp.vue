@@ -125,9 +125,7 @@ watch(isSignUpDone, (newIsSignUpDone) => {
       <Button @click="handleSignUp">Cadastrar</Button>
       <p class="login-text">
         Já tem uma conta?
-        <Button variant="link" @onClick="() => router.push({ name: 'signIn' })">
-          Entre agora
-        </Button>
+        <Button variant="link" @onClick="() => router.push({ name: 'signIn' })"> Entre </Button>
       </p>
     </template>
     <div class="success-message" v-if="isSignUpDone">

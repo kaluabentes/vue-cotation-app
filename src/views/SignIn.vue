@@ -71,9 +71,7 @@ const handleSignIn = () => {
     <Button @click="handleSignIn">Login</Button>
     <p class="account-text">
       Você ainda não possui uma conta?
-      <Button variant="link" @onClick="() => router.push({ name: 'signUp' })">
-        Crie uma agora
-      </Button>
+      <Button variant="link" @onClick="() => router.push({ name: 'signUp' })"> Crie uma </Button>
     </p>
   </AuthLayout>
 </template>
