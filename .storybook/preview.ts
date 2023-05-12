@@ -5,7 +5,7 @@ import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/600.css'
 import '@fontsource/poppins/700.css'
 
-import '@/assets/global.css'
+import '@/styles/global.css'
 
 import '@/lib/infra/icons'
 
