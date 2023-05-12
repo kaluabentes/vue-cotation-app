@@ -197,14 +197,17 @@ const handleChartToggle = () => {
   cursor: pointer;
   color: #888;
 
-  &:hover,
-  &:focus {
-    border: 2px solid #004eff;
+  &:hover {
+    background: #f6f6f6;
   }
 }
 
 .quotation-card__chart-button--active {
   background: #004eff;
   color: white;
+
+  &:hover {
+    background: #0014ff;
+  }
 }
 </style>
