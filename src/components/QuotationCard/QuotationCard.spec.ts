@@ -6,7 +6,13 @@ import QuotationCard from './QuotationCard.vue'
 describe('QuotationCard', () => {
   it('renders properly', () => {
     const wrapper = shallowMount(QuotationCard, {
-      props: { variation: 0.045, name: 'Dolar', price: 50.5, priceLocale: 'pt-BR', currency: 'BRL' }
+      props: {
+        variation: 0.045,
+        name: 'Dolar',
+        price: 50.5,
+        priceLocale: 'pt-BR',
+        currency: 'BRL'
+      }
     })
 
     const variation = wrapper.find('.quotation-card__badge').text()
@@ -20,7 +26,13 @@ describe('QuotationCard', () => {
 
   it('toggles chart', async () => {
     const wrapper = shallowMount(QuotationCard, {
-      props: { variation: 0.045, name: 'Dolar', price: 50.5, priceLocale: 'pt-BR', currency: 'BRL' }
+      props: {
+        variation: 0.045,
+        name: 'Dolar',
+        price: 50.5,
+        priceLocale: 'pt-BR',
+        currency: 'BRL'
+      }
     })
     const button = wrapper.find('.quotation-card__chart-button')
 
