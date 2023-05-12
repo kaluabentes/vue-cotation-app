@@ -6,6 +6,10 @@ An app to fech and display finance data.
 
 ![Screenshot](https://raw.githubusercontent.com/kaluabentes/vue-cotation-app/main/screenshots/dashboard.png)
 
+## Requirements
+
+- Node LTS Hydrogen
+
 ## Setup
 
 - Clone the repository
