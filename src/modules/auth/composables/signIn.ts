@@ -1,6 +1,9 @@
 import { useRouter } from 'vue-router'
+
+import { SESSION_EXPIRE_TIME } from '@/config/constants'
 import { USERS_STORAGE_KEY, USER_STORAGE_KEY } from '../constants'
 import User from '../models/User'
+import useSignOut from './signOut'
 
 interface Credentials {
   email: string
@@ -9,6 +12,7 @@ interface Credentials {
 
 const useSignIn = () => {
   const router = useRouter()
+  const { signOut } = useSignOut()
 
   const signIn = (credentials: Credentials) => {
     const localUsers = localStorage.getItem(USERS_STORAGE_KEY)
@@ -28,7 +32,8 @@ const useSignIn = () => {
       throw new Error('Senha inválida')
     }
 
-    localStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user))
+    sessionStorage.setItem(USER_STORAGE_KEY, JSON.stringify(user))
+    setTimeout(() => signOut(), SESSION_EXPIRE_TIME)
     router.push({ name: 'dashboard' })
   }
 

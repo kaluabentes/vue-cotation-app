@@ -5,7 +5,7 @@ const useSignOut = () => {
   const router = useRouter()
 
   const signOut = () => {
-    localStorage.removeItem(USER_STORAGE_KEY)
+    sessionStorage.removeItem(USER_STORAGE_KEY)
     router.push({ name: 'signIn' })
   }
 

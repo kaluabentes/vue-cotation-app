@@ -10,7 +10,7 @@ const useAuth = () => {
   const router = useRouter()
 
   const getUser = () => {
-    const localUser = localStorage.getItem(USER_STORAGE_KEY)
+    const localUser = sessionStorage.getItem(USER_STORAGE_KEY)
 
     if (!localUser) {
       router.push({ name: 'signIn' })
